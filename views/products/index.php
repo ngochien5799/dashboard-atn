@@ -9,10 +9,12 @@
               <thead class="thead-light">
                 <tr>
 					<th class="text-center" style="width:5%">ID</th>
-					<th style="width:30%">Name</th>
+					<th style="width:15%">Name</th>
 					<th class="text-center" style="width:20%">Image</th>
-					<th class="text-center" style="width:10%">Quantity</th>
-					<th class="text-center" style="width:10%">Cost</th>
+					<th class="text-center" style="width:15%">Category</th>
+					<th class="text-center" style="width:10%">Supplier</th>
+					<th class="text-center" style="width:5%">Quantity</th>
+					<th class="text-center" style="width:5%">Cost</th>
 					<th class="text-center" style="width:25%">Action</th>
                 </tr>
               </thead>
@@ -27,6 +29,30 @@
 					</td>
 					<td>
 					<img src="<?=$product->img?>" class="img-fluid" alt="Responsive image">
+					</td>
+					<td class="text-center align-middle">
+						<div>
+							<?php
+								foreach ($categories as $category)
+									if($product->categoryID == $category->id)
+									{
+										echo $category->name;
+										break;
+									}
+							?>
+						<div>
+					</td>
+					<td class="text-center align-middle">
+						<div>
+							<?php
+								foreach ($suppliers as $supplier)
+									if($product->supplierID == $supplier->id)
+									{
+										echo $supplier->name;
+										break;
+									}
+							?>
+						<div>
 					</td>
 					<td class="text-center align-middle">
 						<div> <?=$product->quantity?> <div>

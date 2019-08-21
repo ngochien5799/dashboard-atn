@@ -79,6 +79,14 @@
               <a class="nav-link" href="./?controller=products">
                 <i class="nav-icon icon-pencil"></i> Product</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./?controller=categories">
+                <i class="nav-icon icon-pencil"></i> Category</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./?controller=suppliers">
+                <i class="nav-icon icon-user"></i> Supplier</a>
+            </li>
           </ul>
         </nav>
         <button class="sidebar-minimizer brand-minimizer" type="button"></button>

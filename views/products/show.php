@@ -35,6 +35,26 @@
             </div>
           </div>
           <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="text-input">Category</label>
+            <div class="col-md-9">
+              <select class="form-control" name="categoryID">
+                <?php foreach($categories as $category) {?>
+                <option value="<?=$category->id?>" <?= $product->categoryID == $category->id? "selected" : ""?>><?=$category->name?></option>
+                <?php }?>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="text-input">Supplier</label>
+            <div class="col-md-9">
+              <select class="form-control" name="supplierID">
+                <?php foreach($suppliers as $supplier) {?>
+                <option value="<?=$supplier->id?>" <?= $product->supplierID == $supplier->id? "selected" : ""?>><?=$supplier->name?></option>
+                <?php }?>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
             <label class="col-md-3 col-form-label" for="text-input">Quantity</label>
             <div class="col-md-9">
               <input class="form-control" id="text-input" type="text" name="quantity" value="<?=$product->quantity?>">
