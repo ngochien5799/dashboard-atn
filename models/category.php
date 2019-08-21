@@ -4,22 +4,28 @@ class Category
   public $id;
   public $name;
   public $description;
+  public $numberProduct;
 
-  function __construct($id, $name, $description)
+  function __construct($id, $name, $description, $numberProduct = NULL)
   {
     $this->id = $id;
     $this->name = $name;
     $this->description = $description;
+    $this->numberProduct = $numberProduct;
   }
 
   static function all()
   {
     $list = [];
     $db = DB::getInstance();
-    $req = $db->query("SELECT * FROM ts_categories ORDER BY \"CategoryID\" ASC;");
+    $req = $db->query("SELECT ts_categories.*, COUNT(ts_products.\"ProductID\") AS number_of_product
+                      FROM ts_categories LEFT JOIN ts_products
+                      ON ts_categories.\"CategoryID\" = ts_products.\"CategoryID\"
+                      GROUP BY ts_categories.\"CategoryID\"
+                      ORDER BY ts_categories.\"CategoryID\" ASC;");
 
     foreach ($req->fetchAll() as $item) {
-      $list[] = new Category($item['CategoryID'], $item['CategoryName'], $item['description']);
+      $list[] = new Category($item['CategoryID'], $item['CategoryName'], $item['description'], $item['number_of_product']);
     }
 
     return $list;

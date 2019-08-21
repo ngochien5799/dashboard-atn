@@ -27,7 +27,9 @@
 					<td class="text-center align-middle">
 						<div> <?=$category->description?> <div>
 					</td>
-					<td></td>
+					<td class="text-center align-middle">
+						<div> <?=$category->numberProduct?> <div>
+					</td>
 					<td class="text-center align-middle">
 						<a href="./?controller=categories&action=show&id=<?=$category->id?>"><button class="btn btn-primary" type="button">
 						<i class="fa fa-pencil-square-o\"></i>&nbsp;Update
