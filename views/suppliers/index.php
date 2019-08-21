@@ -27,7 +27,9 @@
 					<td class="text-center align-middle">
 						<div> <?=$supplier->description?> <div>
 					</td>
-					<td></td>
+					<td class="text-center align-middle">
+						<div> <?=$supplier->numberProduct?> <div>
+					</td>
 					<td class="text-center align-middle">
 						<a href="./?controller=suppliers&action=show&id=<?=$supplier->id?>"><button class="btn btn-primary" type="button">
 						<i class="fa fa-pencil-square-o\"></i>&nbsp;Update
